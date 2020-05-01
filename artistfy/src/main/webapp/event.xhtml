@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Organizadores:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Organizadores</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="idEvent" value="Id "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="idEvent"
+				styleClass="form-control"
+				value="#{eventController.e.idEvent}"
+				required="true" />
+			<h:outputLabel for="name" value="name"
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="name"
+				styleClass="form-control"
+				value="#{eventController.e.name}"
+				maxlength="30" required="true" />
+
+			<h:outputLabel for="description" value="description"
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="description"
+				styleClass="form-control"
+				value="#{eventController.e.description}"
+				maxlength="30" required="true" />
+				
+			<h:outputLabel for="requeriments" value="requeriments"
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="requeriments"
+				styleClass="form-control"
+				value="#{eventController.e.requeriments}"
+				maxlength="30" required="true" />
+				
+			<h:outputLabel for="offeredSalary" value="offeredSalary"
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="offeredSalary"
+				styleClass="form-control"
+				value="#{eventController.e.offeredSalary}"
+				maxlength="30" required="true" />
+						
+			<h:outputLabel for="scheduleAt" value="Schedule at"
+				styleClass="control-label" />
+
+			<p:calendar id="date" pattern="dd/MM/yyyy"
+				value="#{eventController.e.scheduleAt}"
+				showOn="button" timeZone="UTC" required="true">
+			</p:calendar>	
+				
+			<br />
+
+
+			<p:commandButton value="Grabar"
+				actionListener="#{eventController.insert()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listEvent?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listEventr?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>
