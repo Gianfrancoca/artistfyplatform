@@ -35,6 +35,18 @@ public class AritstServiceImpl implements IartistService, Serializable{
 	public List<Artist> list() {
 		return iD.list();
 	}
+
+	@Override
+	public void delete(int idArtist) {
+		// TODO Auto-generated method stub
+		iD.delete(idArtist);
+	}
+
+	@Override
+	public void update(Artist ar) {
+		// TODO Auto-generated method stub
+		iD.update(ar);
+	}
 	
 
 }

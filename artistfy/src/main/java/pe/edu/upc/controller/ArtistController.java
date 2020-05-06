@@ -14,7 +14,7 @@ import pe.edu.upc.serviceinterface.IartistService;
 
 @Named
 @RequestScoped
-public class ArtistController implements Serializable {
+public class artistController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -55,6 +55,34 @@ public class ArtistController implements Serializable {
 			e.getMessage();
 		}
 	}
+	
+	public void delete (Artist ar) {
+		try {
+			iService.delete(ar.getIdArtist());
+			list();
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		
+	}
+	
+	public void update() {
+		try {
+			iService.update(this.i);
+			cleanArtist();
+			this.list();
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public String Modifpre(Artist ar) {
+		this.setI(ar);
+		return "artistMod.xhtml";
+	}
+	
 
 	public void cleanArtist() {
 		this.init();

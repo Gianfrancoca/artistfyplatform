@@ -41,6 +41,33 @@ public class ArtistDaoImpl implements IartistDao, Serializable{
 			System.out.println("Error al listar DAOimpl");
 		}
 		return lista;
+	}	
+
+	@Transactional
+	@Override
+	public void delete(int IdArtist) {
+		// TODO Auto-generated method stub
+		Artist ar = new Artist();
+		try {
+			ar=em.getReference(Artist.class, IdArtist);
+			em.remove(ar);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error al eliminar");
+		}
+		
+	}
+
+	@Transactional
+	@Override
+	public void update(Artist ar) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(ar);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error al modificar");
+		}
 	}
 
 }

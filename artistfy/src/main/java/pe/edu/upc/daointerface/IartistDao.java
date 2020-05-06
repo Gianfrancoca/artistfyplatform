@@ -8,4 +8,7 @@ public interface IartistDao {
 
 	public void insert(Artist artist);
 	public List<Artist> list();
+	public void delete (int IdArtist);
+	public void update (Artist ar);
+	
 }
