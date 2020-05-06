@@ -57,6 +57,33 @@ public class organizerController implements Serializable {
 			e.getMessage();
 		}
 	}
+	
+	public void delete (Organizer or) {
+		try {
+			iService.delete(or.getIdOrganizer());
+			list();
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public void update() {
+		try {
+			iService.update(this.i);
+			cleanOrganizer();
+			this.list();
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public String Modifpre(Organizer or) {
+		this.setI(or);
+		return ("organizerMod.xhtml");
+	}
+	
 		
 	public void cleanOrganizer() {
 		this.init();

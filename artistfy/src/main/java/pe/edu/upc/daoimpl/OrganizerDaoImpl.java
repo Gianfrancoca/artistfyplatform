@@ -52,4 +52,32 @@ public class OrganizerDaoImpl implements IorganizerDao, Serializable {
 		return lista;
 	}
 
+	@Transactional
+	@Override
+	public void delete(int IdOrganizer) {
+		// TODO Auto-generated method stub
+		Organizer or = new Organizer();
+		try {
+			or=em.getReference(Organizer.class, IdOrganizer);
+			em.remove(or);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error al eliminar");	
+		}
+		
+	}
+
+	@Transactional
+	@Override
+	public void update(Organizer or) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(or);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error al modificar");
+		}
+		
+	}
+
 }

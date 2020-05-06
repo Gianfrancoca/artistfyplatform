@@ -52,6 +52,14 @@
 							<p:column headerText="phone" sortBy="#{inf.phone}">
 								<h:outputText value="#{inf.phone}" />
 							</p:column>
+
+							<p:column headerText="Operacion">
+							<h:commandLink action="lstOrganizer" value="Eliminar" actionListener="#{organizerController.delete(inf)}" style="color:red"/>
+							</p:column>
+
+							<p:column headerText="Operación" exportable="false">
+							<h:commandLink value="Modificar" action="#{organizerController.Modifpre(inf)}" style="color:blue;" />
+							</p:column>
 							
 						</p:dataTable>
 					</div>

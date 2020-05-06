@@ -38,4 +38,16 @@ public class OrganizerServiceImpl implements IorganizerService, Serializable{
 		return iD.list();
 	}
 
+	@Override
+	public void delete(int idOrganizer) {
+		// TODO Auto-generated method stub
+		iD.delete(idOrganizer);
+	}
+
+	@Override
+	public void update(Organizer or) {
+		// TODO Auto-generated method stub
+		iD.update(or);
+	}
+
 }
