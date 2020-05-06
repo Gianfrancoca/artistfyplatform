@@ -7,45 +7,49 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import pe.edu.upc.daointerface.IeventDao;
-import pe.edu.upc.entity.Event;
-import pe.edu.upc.serviceinterface.IeventService;
+import pe.edu.upc.daointerface.IcontractDao;
+import pe.edu.upc.entity.Contract;
+import pe.edu.upc.serviceinterface.IcontractService;
 
 @Named
 @RequestScoped
-public class EventServiceImpl implements IeventService, Serializable{
+public class ContractServiceImpl implements IcontractService, Serializable{
 
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-	@Inject
-	private IeventDao iD;
 	
+	@Inject
+	private IcontractDao iD;
+
 	@Override
-	public void insert(Event event) {
+	public void insert(Contract contract) {
 		// TODO Auto-generated method stub
 		try {
-			iD.insert(event);
+			iD.insert(contract);
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Error en el service al insertar un evento");
+			System.out.println("Error en el service al insertar un contrato");
 		}
 	}
 
 	@Override
-	public List<Event> list() {
+	public List<Contract> list() {
 		// TODO Auto-generated method stub
 		return iD.list();
 	}
 
 	@Override
-	public void delete(int idEvent) {
+	public void delete(int idContract) {
 		// TODO Auto-generated method stub
-		iD.delete(idEvent);
+		iD.delete(idContract);
 	}
 
 	@Override
-	public void update(Event ev) {
+	public void update(Contract co) {
 		// TODO Auto-generated method stub
-		iD.update(ev);
+		iD.update(co);
 	}
 
 }

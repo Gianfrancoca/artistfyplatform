@@ -5,6 +5,7 @@
 		<class>pe.edu.upc.entity.Artist</class>
 		<class>pe.edu.upc.entity.Organizer</class>
 		<class>pe.edu.upc.entity.Event</class>
+		<class>pe.edu.upc.entity.Contract</class>
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"
