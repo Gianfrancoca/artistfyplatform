@@ -36,4 +36,16 @@ public class EventServiceImpl implements IeventService, Serializable{
 		return iD.list();
 	}
 
+	@Override
+	public void delete(int idEvent) {
+		// TODO Auto-generated method stub
+		iD.delete(idEvent);
+	}
+
+	@Override
+	public void update(Event ev) {
+		// TODO Auto-generated method stub
+		iD.update(ev);
+	}
+
 }

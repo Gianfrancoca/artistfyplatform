@@ -8,4 +8,6 @@ public interface IeventService {
 
 		public void insert(Event event);
 		public List<Event> list();
+		public void delete (int idEvent);
+		public void update(Event ev);
 }

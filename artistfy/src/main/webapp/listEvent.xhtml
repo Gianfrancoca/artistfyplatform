@@ -55,6 +55,14 @@
 									<f:convertDateTime pattern="dd-MM-yyyy" timeZone="UTC" />
 								</h:outputText>
 							</p:column>
+
+							<p:column headerText="Operacion">
+							<h:commandLink action="lstEvent" value="Eliminar" actionListener="#{eventController.delete(inf)}" style="color:red"/>
+							</p:column>
+
+							<p:column headerText="Operación" exportable="false">
+							<h:commandLink value="Modificar" action="#{eventController.Modifpre(inf)}" style="color:blue;" />
+							</p:column>
 							
 						</p:dataTable>
 					</div>

@@ -8,4 +8,6 @@ public interface IeventDao {
 
 	public void insert(Event event);
 	public List<Event> list();
+	public void delete(int IdEvent);
+	public void update(Event ev);
 }

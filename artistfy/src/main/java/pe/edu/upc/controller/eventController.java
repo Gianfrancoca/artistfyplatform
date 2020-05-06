@@ -59,6 +59,32 @@ public class eventController implements Serializable{
 		}
 	}
 	
+	public void delete(Event ev) {
+		try {
+			iService.delete(ev.getIdEvent());
+			list();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+		}
+	}
+	
+	public void update() {
+		try {
+			iService.update(this.e);
+			cleanEvent();
+			this.list();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+		}
+	}
+	
+	public String Modifpre(Event ev) {
+		this.setE(ev);
+		return "eventMod.xhtml";
+	}
+	
 	public void cleanEvent() {
 		this.init();
 	}

@@ -46,5 +46,33 @@ public class EventDaoImpl implements IeventDao, Serializable{
 		
 		return lista;
 	}
+	
+	@Transactional
+	@Override
+	public void delete(int IdEvent) {
+		// TODO Auto-generated method stub
+		Event ev = new Event();
+		try {
+			ev=em.getReference(Event.class, IdEvent);
+			em.remove(ev);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error al eliminar");
+		}
+	}
+	
+	@Transactional
+	@Override
+	public void update(Event ev) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(ev);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error al modificar");
+		}
+		
+		
+	}
 
 }
