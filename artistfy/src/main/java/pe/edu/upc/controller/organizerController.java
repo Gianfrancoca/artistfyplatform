@@ -13,7 +13,7 @@ import pe.edu.upc.serviceinterface.IorganizerService;
 
 @Named
 @RequestScoped
-public class OrganizerController implements Serializable {
+public class organizerController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	

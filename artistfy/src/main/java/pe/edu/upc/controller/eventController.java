@@ -14,7 +14,7 @@ import pe.edu.upc.serviceinterface.IeventService;
 
 @Named
 @RequestScoped
-public class EventController implements Serializable{
+public class eventController implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
