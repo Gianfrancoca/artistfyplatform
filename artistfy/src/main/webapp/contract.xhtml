@@ -28,7 +28,7 @@
 			<h:outputLabel for="description" value="descriptionContract"
 				styleClass="control-label" />
 
-			<p:inputText autocomplete="off" id="descriptionContract"
+			<p:inputTextarea rows="6" cols="33" autocomplete="off" id="descriptionContract"
 				styleClass="form-control"
 				value="#{contractController.c.descriptionContract}"
 				maxlength="150" required="true" />
@@ -36,10 +36,11 @@
 			<h:outputLabel for="salary" value="salary"
 				styleClass="control-label" />
 
-			<p:inputText autocomplete="off" id="salary"
+			<p:inputText  autocomplete="off" id="salary"
 				styleClass="form-control"
 				value="#{contractController.c.salary}"
 				maxlength="30" required="true" />
+			<p:message for="salary" />	
 				
 			<h:outputLabel for="address" value="address"
 				styleClass="control-label" />
