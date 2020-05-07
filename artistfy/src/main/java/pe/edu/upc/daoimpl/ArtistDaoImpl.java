@@ -29,6 +29,9 @@ public class ArtistDaoImpl implements IartistDao, Serializable{
 		}
 	}
 	
+	
+	
+	
 	@SuppressWarnings("unchecked")
 	public List<Artist> list() {
 		// TODO Auto-generated method stub
