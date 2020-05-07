@@ -8,17 +8,17 @@
 <ui:composition template="master.xhtml">
 
 	<ui:define name="title">
-        .:Registro de Organizadores:.
+        .:Registro de Eventos:.
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>Organizadores</span>
+		<span>Eventos</span>
 	</ui:define>
 
 	<ui:define name="content">
 		<h:form>
 			<h:outputLabel for="idEvent" value="Id "
-				styleClass="control-label" />
+				styleClass="control-label"/>
 
 			<p:inputText autocomplete="off" id="idEvent"
 				styleClass="form-control"
@@ -35,7 +35,7 @@
 			<h:outputLabel for="description" value="description"
 				styleClass="control-label" />
 
-			<p:inputText autocomplete="off" id="description"
+			<p:inputTextarea rows="6" cols="33" autocomplete="off" id="description"
 				styleClass="form-control"
 				value="#{eventController.e.description}"
 				maxlength="30" required="true" />
