@@ -23,23 +23,37 @@
 			<p:inputText autocomplete="off" id="idContract"
 				styleClass="form-control"
 				value="#{contractController.c.idContract}"
-				required="true" />
+				required="true" label="Id"/>
+				<p:message for="idContract" />
+				
+				<p:outputLabel for="cboArtist" value="Artist" />
+			<p:selectOneMenu id="cboArtist" value="#{contractController.c.artist}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{contractController.listaArtist}" var="m"
+					itemLabel="#{m.firstName}" itemValue="#{m}" />
+			</p:selectOneMenu>
+			<br />
+				
 
 			<h:outputLabel for="description" value="descriptionContract"
 				styleClass="control-label" />
 
-			<p:inputText autocomplete="off" id="descriptionContract"
+			<p:inputTextarea rows="6" cols="33" autocomplete="off" id="descriptionContract"
 				styleClass="form-control"
 				value="#{contractController.c.descriptionContract}"
-				maxlength="150" required="true" />
+				maxlength="150" required="true" label="Description"/>
+			<p:message for="descriptionContract" />	
+			
 
 			<h:outputLabel for="salary" value="salary"
 				styleClass="control-label" />
 
-			<p:inputText autocomplete="off" id="salary"
+			<p:inputText  autocomplete="off" id="salary"
 				styleClass="form-control"
 				value="#{contractController.c.salary}"
-				maxlength="30" required="true" />
+				maxlength="30" required="true" label="Salary" />
+			<p:message for="salary" />	
+			
 				
 			<h:outputLabel for="address" value="address"
 				styleClass="control-label" />
@@ -47,7 +61,9 @@
 			<p:inputText autocomplete="off" id="address"
 				styleClass="form-control"
 				value="#{contractController.c.address}"
-				maxlength="30" required="true" />
+				maxlength="30" required="true" label="Address"/>
+			<p:message for="address" />	
+			
 
 
 			<p:commandButton value="Grabar"

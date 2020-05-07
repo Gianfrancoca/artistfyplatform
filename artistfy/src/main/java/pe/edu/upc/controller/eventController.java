@@ -10,7 +10,9 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.entity.Event;
+import pe.edu.upc.entity.Organizer;
 import pe.edu.upc.serviceinterface.IeventService;
+import pe.edu.upc.serviceinterface.IorganizerService;
 
 @Named
 @RequestScoped
@@ -21,15 +23,24 @@ public class eventController implements Serializable{
 	@Inject
 	private IeventService iService;
 	
+	@Inject
+	private IorganizerService oService;
+	
 	private Event e;
+	private Organizer o;
+	
 	List<Event> listaEvent;
+	List<Organizer> listaOrganizer;
 	
 	//constructor
 	@PostConstruct
 	public void init() {
 		this.listaEvent=new ArrayList<Event>();
+		this.listaOrganizer=new ArrayList<Organizer>();
 		this.e=new Event();
+		this.o=new Organizer();
 		this.list();
+		this.listO();
 	}
 	
 	//Metodos
@@ -53,6 +64,15 @@ public class eventController implements Serializable{
 	public void list() {
 		try {
 			listaEvent=iService.list();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+		}
+	}
+	
+	public void listO() {
+		try {
+			listaOrganizer=oService.list();
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.getMessage();
@@ -103,6 +123,22 @@ public class eventController implements Serializable{
 
 	public void setListaEvent(List<Event> listaEvent) {
 		this.listaEvent = listaEvent;
+	}
+
+	public Organizer getO() {
+		return o;
+	}
+
+	public void setO(Organizer o) {
+		this.o = o;
+	}
+
+	public List<Organizer> getListaOrganizer() {
+		return listaOrganizer;
+	}
+
+	public void setListaOrganizer(List<Organizer> listaOrganizer) {
+		this.listaOrganizer = listaOrganizer;
 	}
 	
 	

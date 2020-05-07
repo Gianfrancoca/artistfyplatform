@@ -32,6 +32,10 @@
 							<p:column headerText="Id" sortBy="#{inf.idEvent}">
 								<h:outputText value="#{inf.idEvent}" />
 							</p:column>
+							
+							<p:column headerText="Organizer" sortBy="#{inf.organizer.firstName}">
+								<h:outputText value="#{inf.organizer.firstName}" />
+							</p:column>
 
 							<p:column headerText="name" sortBy="#{inf.name}">
 								<h:outputText value="#{inf.name}" />

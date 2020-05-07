@@ -24,6 +24,16 @@
 				styleClass="form-control"
 				value="#{eventController.e.idEvent}"
 				required="true" />
+				
+			<p:outputLabel for="cboOrganizer" value="Organizer" />
+			<p:selectOneMenu id="cboOrganizer" value="#{eventController.e.organizer}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{organizerController.listaOrganizer}" var="m"
+					itemLabel="#{m.firstName}" itemValue="#{m}" />
+			</p:selectOneMenu>
+			<br />	
+				
+	
 			<h:outputLabel for="name" value="name"
 				styleClass="control-label" />
 

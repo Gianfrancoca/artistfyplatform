@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +21,11 @@ public class Event implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idEvent;
+	
+	@ManyToOne
+	@JoinColumn(name = "idOrganizer",nullable=false)
+	private Organizer organizer;
+	
 	
 	@Column(name = "name", nullable=false , length = 50)
 	private String name;
@@ -40,10 +47,11 @@ public class Event implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Event(int idEvent, String name, String description, String requeriments, Double offeredSalary,
-			Date scheduleAt) {
+	public Event(int idEvent, Organizer organizer, String name, String description, String requeriments,
+			Double offeredSalary, Date scheduleAt) {
 		super();
 		this.idEvent = idEvent;
+		this.organizer = organizer;
 		this.name = name;
 		this.description = description;
 		this.requeriments = requeriments;
@@ -51,14 +59,20 @@ public class Event implements Serializable{
 		this.scheduleAt = scheduleAt;
 	}
 
-	//getters and setters 
-	
 	public int getIdEvent() {
 		return idEvent;
 	}
 
 	public void setIdEvent(int idEvent) {
 		this.idEvent = idEvent;
+	}
+
+	public Organizer getOrganizer() {
+		return organizer;
+	}
+
+	public void setOrganizer(Organizer organizer) {
+		this.organizer = organizer;
 	}
 
 	public String getName() {
@@ -99,7 +113,9 @@ public class Event implements Serializable{
 
 	public void setScheduleAt(Date scheduleAt) {
 		this.scheduleAt = scheduleAt;
-	} 
+	}
+
+	
 	
 	
 }
