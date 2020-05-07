@@ -8,6 +8,8 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+
+import pe.edu.upc.entity.InfectiousAgent;
 import pe.edu.upc.entity.Organizer;
 import pe.edu.upc.serviceinterface.IorganizerService;
 
@@ -55,6 +57,32 @@ public class OrganizerController implements Serializable {
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.getMessage();
+		}
+	}
+	
+
+	public void delete (Organizer or) {
+		try {
+			iService.delete(or.getIdOrganizer());
+			list();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public String modifpre (Organizer or) {
+		this.setI(or);
+		return "OrganizerMod.xhtml";
+	}
+	
+	public void modificar() {
+		try {
+			iService.modificar(this.i);
+			cleanOrganizer();
+			this.list();
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
 		}
 	}
 		
