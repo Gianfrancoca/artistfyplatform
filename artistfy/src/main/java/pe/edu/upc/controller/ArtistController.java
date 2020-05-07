@@ -29,6 +29,8 @@ public class ArtistController implements Serializable {
 		this.listaArtist = new ArrayList<Artist>();
 		this.i=new Artist();
 		this.list();
+		
+		
 	}
 	
 	public String newArtist() {
