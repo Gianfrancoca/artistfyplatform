@@ -103,6 +103,5 @@ public class artistController implements Serializable {
 	public void setListaArtist(List<Artist> listaArtist) {
 		this.listaArtist = listaArtist;
 	}
-
 	
 }

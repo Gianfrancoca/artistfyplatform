@@ -32,6 +32,11 @@
 							<p:column headerText="Id" sortBy="#{inf.idContract}">
 								<h:outputText value="#{inf.idContract}" />
 							</p:column>
+							
+							<p:column headerText="Artista" sortBy="#{inf.artist.firstName}">
+								<h:outputText value="#{inf.artist.firstName}" />
+							</p:column>
+							
 
 							<p:column headerText="description" sortBy="#{inf.descriptionContract}">
 								<h:outputText value="#{inf.descriptionContract}" />

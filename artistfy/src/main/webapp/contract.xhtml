@@ -25,6 +25,15 @@
 				value="#{contractController.c.idContract}"
 				required="true" label="Id"/>
 				<p:message for="idContract" />
+				
+				<p:outputLabel for="cboArtist" value="Artist" />
+			<p:selectOneMenu id="cboArtist" value="#{contractController.c.artist}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{contractController.listaArtist}" var="m"
+					itemLabel="#{m.firstName}" itemValue="#{m}" />
+			</p:selectOneMenu>
+			<br />
+				
 
 			<h:outputLabel for="description" value="descriptionContract"
 				styleClass="control-label" />

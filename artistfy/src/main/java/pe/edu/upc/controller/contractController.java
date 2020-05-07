@@ -9,7 +9,9 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import pe.edu.upc.entity.Artist;
 import pe.edu.upc.entity.Contract;
+import pe.edu.upc.serviceinterface.IartistService;
 import pe.edu.upc.serviceinterface.IcontractService;
 
 @Named
@@ -23,16 +25,24 @@ public class contractController implements Serializable{
 	
 	@Inject
 	private IcontractService iService;
+	
+	@Inject
+	private IartistService aService;
 
 	private Contract c;
+	private Artist a;
 	
 	List<Contract> listaContract;
+	List<Artist> listaArtist;
 	
 	@PostConstruct
 	public void init() {
 		this.listaContract = new ArrayList<Contract>();
+		this.listaArtist= new ArrayList<Artist>();
 		this.c=new Contract();
+		this.a=new Artist();
 		this.list();
+		this.listA();
 	}
 	
 	public String newContract() {
@@ -59,6 +69,16 @@ public class contractController implements Serializable{
 			e.getMessage();
 		}
 	}
+	
+	public void listA() {
+		try {
+			listaArtist=aService.list();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+		}
+	}
+	
 	
 	public void delete(Contract co) {
 		try {
@@ -104,6 +124,22 @@ public class contractController implements Serializable{
 
 	public void setListaContract(List<Contract> listaContract) {
 		this.listaContract = listaContract;
+	}
+
+	public Artist getA() {
+		return a;
+	}
+
+	public void setA(Artist a) {
+		this.a = a;
+	}
+
+	public List<Artist> getListaArtist() {
+		return listaArtist;
+	}
+
+	public void setListaArtist(List<Artist> listaArtist) {
+		this.listaArtist = listaArtist;
 	}
 	
 	
