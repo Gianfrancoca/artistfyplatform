@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.mindrot.jbcrypt.BCrypt;
+
 import pe.edu.upc.entity.Organizer;
 import pe.edu.upc.entity.Rol;
 import pe.edu.upc.entity.User;
@@ -25,7 +26,7 @@ public class RegisterController implements Serializable {
 	@Inject
 	//private ICustomerService cS;
 	private IorganizerService oS;
-
+	
 	@Inject
 	private IRolService rS;
 
@@ -48,14 +49,13 @@ public class RegisterController implements Serializable {
 			this.user.setPassword(passwordHash);
 			this.user.setState("A");
 			this.organizer.setUser(user);
-			//this.customer.setUser(user);
 			this.user.setOrganizer(organizer);
 			//this.user.setCustomer(customer);
 			this.oS.insert(organizer);
 //			this.cS.insert(customer);
 
 			List<Rol> roles = new ArrayList<Rol>();
-			int TIPO_USUARIO = 1;
+			int TIPO_USUARIO = 3;
 			Rol r = new Rol();
 			r.setId(TIPO_USUARIO);
 			roles.add(r);
@@ -67,7 +67,6 @@ public class RegisterController implements Serializable {
 
 		return redirect;
 	}
-
 
 
 	public Organizer getOrganizer() {

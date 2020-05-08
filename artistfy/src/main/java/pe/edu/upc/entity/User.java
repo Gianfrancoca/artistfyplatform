@@ -24,7 +24,7 @@ public class User implements Serializable {
 	@MapsId
 	@JoinColumn(name = "idOrganizer", nullable = false)
 	private Organizer organizer;
-
+	
 	@Column(name = "username", nullable = false, length = 30)
 	private String username;
 
@@ -39,6 +39,8 @@ public class User implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
+
+
 	public User(int id, Organizer organizer, String username, String password, String state) {
 		super();
 		this.id = id;
@@ -47,6 +49,8 @@ public class User implements Serializable {
 		this.password = password;
 		this.state = state;
 	}
+
+
 
 	public int getId() {
 		return id;
@@ -87,5 +91,5 @@ public class User implements Serializable {
 	public void setState(String state) {
 		this.state = state;
 	}
-	
+
 }

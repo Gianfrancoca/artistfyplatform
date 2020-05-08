@@ -15,7 +15,7 @@ public interface IUserDao {
 	List<User> findAll() throws Exception;
 
 	Optional<User> findById(User user) throws Exception;
-
+	
 	String getPassworHashedByUserName(String username) throws Exception;
 
 	Optional<User> findUserByUsername(User user) throws Exception;

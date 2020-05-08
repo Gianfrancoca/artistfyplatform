@@ -39,6 +39,7 @@ public class UserServiceImpl implements IUserService, Serializable {
 	public Integer delete(User t) throws Exception {
 		return uD.delete(t);
 	}
+	
 
 	@Override
 	public List<User> getAll() throws Exception {
@@ -49,6 +50,7 @@ public class UserServiceImpl implements IUserService, Serializable {
 	public Optional<User> getOne(User t) throws Exception {
 		return uD.findById(t);
 	}
+
 
 	@Override
 	public Optional<User> authentication(User user) throws Exception {

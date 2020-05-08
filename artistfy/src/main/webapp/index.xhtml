@@ -34,9 +34,12 @@
 			<p:commandButton value="Login"
 				action="#{loginController.authentication()}" update=":frm"
 				styleClass="btn btn-primary" />
-			<p:commandButton value="Crear Usuario"
+			<p:commandButton value="Crear Usuario Organizador"
 				action="register?faces-redirect=true" immediate="true"
 				styleClass="btn btn-primary" />
+			<p:commandButton value="Crear Usuario Artista"
+				action="registerA?faces-redirect=true" immediate="true"
+				styleClass="btn btn-primary" />	
 		</div>
 	</h:form>
 

@@ -2,6 +2,7 @@ package pe.edu.upc.entity;
 
 import java.io.Serializable;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -40,6 +41,7 @@ public class Artist implements Serializable{
 		@Column(name = "websiteUrl",nullable = false, length=50)
 	    private String websiteUrl;
 		
+
 		public Artist() {
 			super();
 			// TODO Auto-generated constructor stub

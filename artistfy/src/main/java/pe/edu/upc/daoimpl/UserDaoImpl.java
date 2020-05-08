@@ -39,6 +39,7 @@ public class UserDaoImpl implements IUserDao, Serializable {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -62,6 +63,8 @@ public class UserDaoImpl implements IUserDao, Serializable {
 
 		return Optional.of(user);
 	}
+	
+
 
 	@Override
 	public String getPassworHashedByUserName(String username) throws Exception {

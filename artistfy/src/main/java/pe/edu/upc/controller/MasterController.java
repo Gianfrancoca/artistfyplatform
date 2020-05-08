@@ -54,21 +54,20 @@ public class MasterController implements Serializable {
 		String rol = "";
 		switch (viewId) {
 		case "/organizer.xhtml":
-			rol = "USER,ADMIN";
+			rol = "ADMIN, USER,ORGANIZER";
 			break;
 		case "/listOrganizer.xhtml":
-			rol = "ADMIN";
+			rol = "ADMIN,USER,ORGANIZER";
 			break;
 		case "/event.xhtml":
-			rol = "USER";
+			rol = "ADMIN,USER,ORGANIZER";
 			break;
 		case "/listEvent.xhtml":
-			rol = "USER";
+			rol = "ADMIN,USER,ORGANIZER";
 			break;	
 		case "/panel.xhtml":
-			rol = "ADMIN,USER";
-			break;
-		
+			rol = "ADMIN,USER,ORGANIZER";
+			break;			
 		default:
 			break;
 		}
