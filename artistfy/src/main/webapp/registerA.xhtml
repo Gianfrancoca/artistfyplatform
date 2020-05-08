@@ -89,24 +89,24 @@
 				<h:column />
 				<h:column />
 
-				<p:outputLabel for="txtUser" value="Usuario" />
+				<p:outputLabel for="txtUser" value="Username" />
 				<p:inputText id="txtUser"
 					value="#{registerControllerA.userA.usernameA}" required="true"
 					styleClass="form-control" />
 				<p:message for="txtUser" display="text" />
 				<h:column />
 
-				<p:outputLabel for="txtPassword1" value="Contraseña :" />
+				<p:outputLabel for="txtPassword1" value="Password :" />
 				<p:password id="txtPassword1"
 					value="#{registerControllerA.userA.passwordA}" match="txtPassword2"
 					label="Password 1" required="true"
-					validatorMessage="Contraseñas no coinciden"
+					validatorMessage="Password does not match"
 					styleClass="form-control" />
 				<p:message for="txtPassword1" display="text" />
 				<h:column />
 
 				<p:outputLabel for="txtPassword2"
-					value="Escriba nuevamente su contraseña:" />
+					value="Write again: " />
 				<p:password id="txtPassword2"
 					value="#{registerControllerA.userA.passwordA}" label="Password 2"
 					required="true" styleClass="form-control" />
@@ -115,9 +115,9 @@
 
 			</h:panelGrid>
 
-			<p:commandButton value="Inicio" action="indexA?faces-redirect=true"
+			<p:commandButton value="Home" action="indexA?faces-redirect=true"
 				immediate="true" styleClass="btn btn-primary" />
-			<p:commandButton value="Registrar"
+			<p:commandButton value="Register"
 				action="#{registerControllerA.registerUserA()}"
 				styleClass="btn btn-primary" />
 		</div>
