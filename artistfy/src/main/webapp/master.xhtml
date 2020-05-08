@@ -23,6 +23,9 @@
 	<h:outputStylesheet name="css/main_base.css" />
 	<h:outputStylesheet name="css/font_ico.css" />
 	<ui:insert name="headCont"></ui:insert>
+	<f:event listener="#{masterController.verificarSesion()}"
+	type="preRenderView" />
+	
 </h:head>
 <h:body>
 	<nav class="navbar navbar-default navbar-fixed-top base_primary"
