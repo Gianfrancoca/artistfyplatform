@@ -24,12 +24,15 @@
 			</center>
 			<h:panelGrid columns="2">
 
-				<p:outputLabel for="txtUsername" value="Usuario:" />
+				<p:outputLabel for="txtUsername" value="Username:" />
 				<h:inputText id="txtUsername"
-					value="#{loginControllerA.userA.usernameA}" styleClass="form-control" />
-				<p:outputLabel for="txtPassword" value="Contraseña:" />
+					value="#{loginControllerA.userA.usernameA}" styleClass="form-control" required="true" label="Username"/>
+				<p:message for="txtUsername" />	
+				<br/>
+				<p:outputLabel for="txtPassword" value="Password:" />
 				<h:inputSecret id="txtPassword"
-					value="#{loginControllerA.userA.passwordA}" styleClass="form-control" />
+					value="#{loginControllerA.userA.passwordA}" styleClass="form-control" required="true" label="Password" />
+					<p:message for="txtPassword" />
 			</h:panelGrid>
 			<p:commandButton value="Login"
 				action="#{loginControllerA.authenticationA()}" update=":frm"

@@ -63,7 +63,7 @@ public class MasterController implements Serializable {
 			rol = "ADMIN,ORGANIZER";
 			break;
 		case "/listEvent.xhtml":
-			rol = "ORGANIZER";
+			rol = "ADMIN";
 			break;	
 		case "/panel.xhtml":
 			rol = "ADMIN,ORGANIZER";
@@ -72,7 +72,7 @@ public class MasterController implements Serializable {
 			rol = "ADMIN,ORGANIZER";
 			break;
 		case "/listContract.xhtml":
-			rol = "ORGANIZER";
+			rol = "ADMIN";
 			break;
 		case "/listContractO.xhtml":
 			rol = "USER,ORGANIZER";
@@ -87,6 +87,9 @@ public class MasterController implements Serializable {
 			rol = "ORGANIZER";
 			break;	
 		case "/listOrganizerO.xhtml":
+			rol = "ORGANIZER";
+			break;
+		case "/listEventO.xhtml":
 			rol = "ORGANIZER";
 			break;
 		default:
