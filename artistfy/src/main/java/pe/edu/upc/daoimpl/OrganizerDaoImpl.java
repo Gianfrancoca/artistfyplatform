@@ -50,7 +50,7 @@ public class OrganizerDaoImpl implements IorganizerDao, Serializable {
 		}
 		
 		@Transactional
-		public void delete(int Organizer) {
+		public void delete (int Organizer) {
 			Organizer ia = new Organizer();
 			try {
 				ia = em.getReference(Organizer.class,Organizer);
@@ -62,7 +62,7 @@ public class OrganizerDaoImpl implements IorganizerDao, Serializable {
 
 		@Transactional
 		@Override
-		public void modificar(Organizer ia) {
+		public void modificar (Organizer ia) {
 			// TODO Auto-generated method stub
 			try {
 				em.merge(ia);
