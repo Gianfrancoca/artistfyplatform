@@ -9,6 +9,9 @@
 		<class>pe.edu.upc.entity.User</class>
 		<class>pe.edu.upc.entity.Rol</class>
 		<class>pe.edu.upc.entity.UserRol</class>
+		<class>pe.edu.upc.entity.UserA</class>
+		<class>pe.edu.upc.entity.RolA</class>
+		<class>pe.edu.upc.entity.UserRolA</class>
 	<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"

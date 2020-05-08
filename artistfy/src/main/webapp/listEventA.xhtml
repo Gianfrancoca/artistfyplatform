@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="masterA.xhtml">
+	<ui:define name="title">
+        .:Listado de Eventos:.
+    </ui:define>
+	<ui:define name="titleCont">
+		<span>Eventos </span>
+	</ui:define>
+	<ui:define name="content">
+	<h:form>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group table-responsive box-table-class">
+						<p:dataTable id="lstEvent" var="inf"
+							value="#{eventController.listaEvent}"
+							paginator="true" paginatorPosition="top"
+							rowsPerPageTemplate="10,20,30,40,50" rows="10"
+							styleClass="table table-bordered"
+							emptyMessage="No existen registros" rowIndexVar="item"
+							style="margin-bottom:0">
+
+							<p:column headerText="Id" sortBy="#{inf.idEvent}">
+								<h:outputText value="#{inf.idEvent}" />
+							</p:column>
+							
+							<p:column headerText="Organizer" sortBy="#{inf.organizer.firstName}">
+								<h:outputText value="#{inf.organizer.firstName}" />
+							</p:column>
+
+							<p:column headerText="name" sortBy="#{inf.name}">
+								<h:outputText value="#{inf.name}" />
+							</p:column>
+
+							<p:column headerText="description" sortBy="#{inf.description}">
+								<h:outputText value="#{inf.description}" />
+							</p:column>
+
+							<p:column headerText="requeriments" sortBy="#{inf.requeriments}">
+								<h:outputText value="#{inf.requeriments}" />
+							</p:column>
+
+							<p:column headerText="offeredSalary" sortBy="#{inf.offeredSalary}">
+								<h:outputText value="#{inf.offeredSalary}" />
+							</p:column>
+
+						<p:column headerText="scheduleAt"
+								sortBy="#{inf.scheduleAt}">
+								<h:outputText value="#{inf.scheduleAt}">
+									<f:convertDateTime pattern="dd-MM-yyyy" timeZone="UTC" />
+								</h:outputText>
+							</p:column>
+							
+						</p:dataTable>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+	<ui:define name="footerCont">
+	</ui:define>
+</ui:composition>
+</html>
+

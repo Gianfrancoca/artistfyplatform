@@ -23,7 +23,7 @@
 	<h:outputStylesheet name="css/main_base.css" />
 	<h:outputStylesheet name="css/font_ico.css" />
 	<ui:insert name="headCont"></ui:insert>
-	<f:event listener="#{masterController.verificarSesion()}"
+	<f:event listener="#{masterControllerA.verificarSesionA()}"
 	type="preRenderView" />
 	
 </h:head>
@@ -52,32 +52,17 @@
 			<!--left-->
 			<div class="col-md-3" id="leftCol">
 				<ul class="nav nav-stacked" id="sidebar">
-					<li id="sidebar-1"><a href="panel.xhtml"><i
+					<li id="sidebar-1"><a href="panelA.xhtml"><i
 							class="icon-home"></i> Inicio</a></li>
-							<li id="sidebar-2"><a href="listArtistO.xhtml"><i
-							class="icon-user"></i> Artistas </a></li>
-						<li id="sidebar-2"><a href="listOrganizerO.xhtml"><i
-							class="icon-user"></i> Organizadores </a></li>
-					<li id="sidebar-2"><a href="listEvent.xhtml"><i
+					<li id="sidebar-2"><a href="listEventA.xhtml"><i
 							class="icon-user"></i> Eventos </a></li>
-					<li id="sidebar-2"><a href="listContract.xhtml"><i
+					<li id="sidebar-2"><a href="listContractA.xhtml"><i
 							class="icon-user"></i> Contratos </a></li>	
 							<li id="sidebar-2"><p:link value="Cerrar Sesión"
-							actionListener="#{masterController.cerrarSesion()}"
+							actionListener="#{masterControllerA.cerrarSesion()}"
 							href="index.xhtml" /></li>	
-					
-					
+
 				</ul>
-			<h:form>	
-			<p:panelMenu style="width:200px">
-					<p:submenu label="ADMIN ONLY">
-					<p:menuitem value="Artist" action="listArtist?faces-redirect=true" icon="pi pi-save" />
-					<p:menuitem value="Organizer" action="listEvent?faces-redirect=true" icon="pi pi-save" />
-					<p:menuitem value="Event" action="listContract?faces-redirect=true" icon="pi pi-save" />
-					<p:menuitem value="Contract" action="listOrganizer?faces-redirect=true" icon="pi pi-save" />
-        			</p:submenu>
-					</p:panelMenu>	
-			</h:form>		
 			</div>
 			<!--/left-->
 

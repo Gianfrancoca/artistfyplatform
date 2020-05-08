@@ -2,12 +2,13 @@ package pe.edu.upc.entity;
 
 import java.io.Serializable;
 
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -41,6 +42,8 @@ public class Artist implements Serializable{
 		@Column(name = "websiteUrl",nullable = false, length=50)
 	    private String websiteUrl;
 		
+		@OneToOne(cascade = CascadeType.ALL, mappedBy="artist")
+		private UserA userA;
 
 		public Artist() {
 			super();
@@ -131,6 +134,16 @@ public class Artist implements Serializable{
 
 		public void setWebsiteUrl(String websiteUrl) {
 			this.websiteUrl = websiteUrl;
+		}
+		
+		
+
+		public UserA getUserA() {
+			return userA;
+		}
+
+		public void setUser(UserA userA) {
+			this.userA = userA;
 		}
 
 		@Override
