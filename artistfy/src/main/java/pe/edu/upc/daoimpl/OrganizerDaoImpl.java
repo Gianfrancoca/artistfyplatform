@@ -10,6 +10,7 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import pe.edu.upc.daointerface.IorganizerDao;
+import pe.edu.upc.entity.InfectiousAgent;
 import pe.edu.upc.entity.Organizer;
 
 public class OrganizerDaoImpl implements IorganizerDao, Serializable {
@@ -48,6 +49,29 @@ public class OrganizerDaoImpl implements IorganizerDao, Serializable {
 			System.out.println("Error al listar DAOImpl");
 		}
 		
+		@Transactional
+		public void delete(int Organizer) {
+			Organizer ia = new Organizer();
+			try {
+				ia = em.getReference(Organizer.class,Organizer);
+				em.remove(ia);
+			} catch (Exception e) {
+				System.out.println("Error al eliminar");
+			}
+		}
+
+		@Transactional
+		@Override
+		public void modificar(Organizer ia) {
+			// TODO Auto-generated method stub
+			try {
+				em.merge(ia);
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println("Error al modificar");
+			}
+		}
 		
 		return lista;
 	}
