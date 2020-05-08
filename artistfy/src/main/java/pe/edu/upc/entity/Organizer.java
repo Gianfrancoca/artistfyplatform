@@ -2,11 +2,13 @@ package pe.edu.upc.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -31,6 +33,9 @@ public class Organizer implements Serializable{
 	private String email;
 	
 	private long phone;
+	
+	@OneToOne(cascade = CascadeType.ALL, mappedBy="organizer")
+	private User user;
 
 	//Constructores
 	
@@ -97,6 +102,14 @@ public class Organizer implements Serializable{
 
 	public void setPhone(long phone) {
 		this.phone = phone;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	@Override

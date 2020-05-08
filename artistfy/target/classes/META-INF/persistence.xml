@@ -6,7 +6,10 @@
 		<class>pe.edu.upc.entity.Organizer</class>
 		<class>pe.edu.upc.entity.Event</class>
 		<class>pe.edu.upc.entity.Contract</class>
-		<properties>
+		<class>pe.edu.upc.entity.User</class>
+		<class>pe.edu.upc.entity.Rol</class>
+		<class>pe.edu.upc.entity.UserRol</class>
+	<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"
 				value="create" />

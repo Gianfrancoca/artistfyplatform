@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
+	<link rel="shortcut icon" type="image/x-icon"
+		href="resources/img/favicon.ico" />
+</h:head>
+<body>
+
+	<h:form id="frm">
+		<p:growl id="men" />
+		<center >
+			<h:graphicImage value="/resources/img/artistfy.png" height="15%"
+				width="15%"></h:graphicImage>
+			<br />
+		</center>
+		<div align="center">
+
+			<f:facet name="header">Registrar Usuario</f:facet>
+			<h:panelGrid id="pg" columns="1">
+			<h:column />
+			<!-- <h:outputLabel for="idOrganizer" value="Id "
+				 />
+
+			 <p:inputText autocomplete="off" id="idOrganizer"
+				styleClass="form-control"
+				value="#{registerController.organizer.idOrganizer}"
+				required="true" />
+				<h:column />
+				-->
+				
+			<h:outputLabel for="firstName" value="firstName"
+				 />
+
+			<p:inputText autocomplete="off" id="firstName"
+				styleClass="form-control"
+				value="#{registerController.organizer.firstName}"
+				maxlength="30" required="true" />
+				<h:column />
+				
+			<h:outputLabel for="lastName" value="lastName"
+				 />
+
+			<p:inputText autocomplete="off" id="lastName"
+				styleClass="form-control"
+				value="#{registerController.organizer.lastName}"
+				maxlength="30" required="true" />
+			<h:column />
+				
+			<h:outputLabel for="dni" value="dni"
+				 />
+
+			<p:inputText autocomplete="off" id="dni"
+				styleClass="form-control"
+				value="#{registerController.organizer.dni}"
+				maxlength="30" required="true" />
+				<h:column />
+			<h:outputLabel for="email" value="email"
+				 />
+
+			<p:inputText autocomplete="off" id="email"
+				styleClass="form-control"
+				value="#{registerController.organizer.email}"
+				maxlength="30" required="true" />
+				<h:column />
+				
+			<h:outputLabel for="phone" value="phone" />
+
+			<p:inputText autocomplete="off" id="phone"
+				styleClass="form-control"
+				value="#{registerController.organizer.phone}"
+				maxlength="30" required="true" />					
+				<h:column />
+
+				<h:column />
+				<h:outputText id="display" />
+				<h:column />
+				<h:column />
+
+				<p:outputLabel for="txtUser" value="Usuario" />
+				<p:inputText id="txtUser"
+					value="#{registerController.user.username}" required="true"
+					styleClass="form-control" />
+				<p:message for="txtUser" display="text" />
+				<h:column />
+
+				<p:outputLabel for="txtPassword1" value="Contraseña :" />
+				<p:password id="txtPassword1"
+					value="#{registerController.user.password}" match="txtPassword2"
+					label="Password 1" required="true"
+					validatorMessage="Contraseñas no coinciden"
+					styleClass="form-control" />
+				<p:message for="txtPassword1" display="text" />
+				<h:column />
+
+				<p:outputLabel for="txtPassword2"
+					value="Escriba nuevamente su contraseña:" />
+				<p:password id="txtPassword2"
+					value="#{registerController.user.password}" label="Password 2"
+					required="true" styleClass="form-control" />
+				<h:column />
+				<h:column />
+
+			</h:panelGrid>
+
+			<p:commandButton value="Inicio" action="index?faces-redirect=true"
+				immediate="true" styleClass="btn btn-primary" />
+			<p:commandButton value="Registrar"
+				action="#{registerController.registerUser()}"
+				styleClass="btn btn-primary" />
+		</div>
+	</h:form>
+
+</body>
+</html>
