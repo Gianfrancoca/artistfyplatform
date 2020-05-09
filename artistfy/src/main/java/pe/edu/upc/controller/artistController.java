@@ -124,6 +124,9 @@ public class artistController implements Serializable {
 
 	public void setMensajeUp(String mensajeUp) {
 		this.mensajeUp = mensajeUp;
+		
+		
+		
 	}
 	
 }
