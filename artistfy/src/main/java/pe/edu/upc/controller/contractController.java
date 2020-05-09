@@ -53,6 +53,11 @@ public class contractController implements Serializable{
 		return "contract.xhtml";
 	}
 	
+	public String newContractO() {
+		this.setC(new Contract());
+		return "contractO.xhtml";
+	}
+	
 	public void insert() {
 		try {
 			iService.insert(c);

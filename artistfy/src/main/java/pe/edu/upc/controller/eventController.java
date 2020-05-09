@@ -53,6 +53,10 @@ public class eventController implements Serializable{
 		return "event.xhtml";
 	}
 	
+	public String newEventO() {
+		this.setE(new Event());
+		return "eventO.xhtml";
+	}
 	public void insert() {
 		try {
 			iService.insert(e);

@@ -58,9 +58,12 @@
 
 			<p:inputText autocomplete="off" id="dni"
 				styleClass="form-control"
-				value="#{registerController.organizer.dni}"
-				maxlength="30" required="true" />
+				value="#{registerController.organizer.dni}" counter="display"
+				 maxlength="8"
+				counterTemplate="{0} caracteres restantes." autoResize="false"
+				 required="true" />
 				<h:column />
+				<h:outputText id="display" />
 			<h:outputLabel for="email" value="email"
 				 />
 
@@ -74,12 +77,14 @@
 
 			<p:inputText autocomplete="off" id="phone"
 				styleClass="form-control"
-				value="#{registerController.organizer.phone}"
-				maxlength="30" required="true" />					
+				value="#{registerController.organizer.phone}" counter="displayP"
+				maxlength="9" 
+				counterTemplate="{0} caracteres restantes." autoResize="false"
+				required="true" />					
+				<h:column />Ï
+				<h:outputText id="displayP" />
 				<h:column />
-
-				<h:column />
-				<h:outputText id="display" />
+				
 				<h:column />
 				<h:column />
 

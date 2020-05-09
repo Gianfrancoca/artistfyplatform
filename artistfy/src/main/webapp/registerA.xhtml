@@ -40,60 +40,78 @@
 
 				<p:inputText autocomplete="off" id="firstName"
 					styleClass="form-control" value="#{registerControllerA.artist.firstName}"
-					maxlength="30" required="true" />
-
+					maxlength="30" required="true"  label= "First Name"/>
+				<p:message for="firstName" />
 				<h:column />
 				<h:outputLabel for="lastName" value="lastName"
-					styleClass="control-label" />
+					styleClass="control-label"/>
+	
 
 				<p:inputText autocomplete="off" id="lastName"
 					styleClass="form-control" value="#{registerControllerA.artist.lastName}"
-					maxlength="30" required="true" />
+					maxlength="30" required="true"  label="Last Name"/>
+					<p:message for="lastName" />
 				<h:column />
 				<h:outputLabel for="dni" value="dni" styleClass="control-label" />
 
 				<p:inputText autocomplete="off" id="dni" styleClass="form-control"
-					value="#{registerControllerA.artist.dni}" maxlength="30" required="true" />
+					value="#{registerControllerA.artist.dni}" counter="display"
+					 maxlength="8"
+					 counterTemplate="{0} caracteres restantes." autoResize="false"
+					 required="true" label="DNI"/>
+					 <p:message for="dni" />
 				<h:column />
+				<h:outputText id="display" />
+				
 				<h:outputLabel for="email" value="email" styleClass="control-label" />
 
 				<p:inputText autocomplete="off" id="email" styleClass="form-control"
-					value="#{registerControllerA.artist.email}" maxlength="30" required="true" />
+					value="#{registerControllerA.artist.email}" maxlength="30" required="true" label="Email" />
+				<p:message for="email" />
 				<h:column />
 				<h:outputLabel for="phone" value="phone" styleClass="control-label" />
 
 				<p:inputText autocomplete="off" id="phone" styleClass="form-control"
-					value="#{registerControllerA.artist.phone}" maxlength="30" required="true" />
+					value="#{registerControllerA.artist.phone}" counter="displayP"
+					maxlength="9"
+					counterTemplate="{0} caracteres restantes." autoResize="false"
+					 required="true" label="Phone"/>
+				<p:message for="phone" />	 
+					 
 				<h:column />
+				<h:outputText id="displayP" />
 				<h:outputLabel for="skill" value="skill" styleClass="control-label" />
 
 				<p:inputText autocomplete="off" id="skill" styleClass="form-control"
-					value="#{registerControllerA.artist.skill}" maxlength="30" required="true" />
+					value="#{registerControllerA.artist.skill}" maxlength="30" required="true" label="Skill" />
+					<p:message for="skill" />
 				<h:column />
 				<h:outputLabel for="genre" value="genre" styleClass="control-label" />
 
 				<p:inputText autocomplete="off" id="genre" styleClass="form-control"
-					value="#{registerControllerA.artist.genre}" maxlength="30" required="true" />
+					value="#{registerControllerA.artist.genre}" maxlength="30" required="true" label="Genre"/>
+					<p:message for="genre" />
 				<h:column />
 				<h:outputLabel for="websiteUrl" value="websiteUrl"
 					styleClass="control-label" />
 
 				<p:inputText autocomplete="off" id="websiteUrl"
 					styleClass="form-control" value="#{registerControllerA.artist.websiteUrl}"
-					maxlength="30" required="true" />
+					maxlength="30" required="true" label="Website URL"/>
+				<p:message for="websiteUrl" />	
 				<h:column />
 				<br />
 
 				<h:column />
-				<h:outputText id="display" />
+				
 				<h:column />
 				<h:column />
 
 				<p:outputLabel for="txtUser" value="Username" />
 				<p:inputText id="txtUser"
 					value="#{registerControllerA.userA.usernameA}" required="true"
-					styleClass="form-control" />
-				<p:message for="txtUser" display="text" />
+					styleClass="form-control" label= "txtUser"/>
+				<p:message for="txtUser" />
 				<h:column />
 
 				<p:outputLabel for="txtPassword1" value="Password :" />
@@ -102,7 +120,7 @@
 					label="Password 1" required="true"
 					validatorMessage="Password does not match"
 					styleClass="form-control" />
-				<p:message for="txtPassword1" display="text" />
+				<p:message for="txtPassword1" />
 				<h:column />
 
 				<p:outputLabel for="txtPassword2"
@@ -110,6 +128,7 @@
 				<p:password id="txtPassword2"
 					value="#{registerControllerA.userA.passwordA}" label="Password 2"
 					required="true" styleClass="form-control" />
+				<p:message for="txtPassword2" />	
 				<h:column />
 				<h:column />
 

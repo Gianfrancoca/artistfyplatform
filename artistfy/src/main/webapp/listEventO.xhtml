@@ -15,7 +15,7 @@
 		<h:form>
 			<div class="row" align="center">
 				<p:commandButton value="Nuevo"
-					action="#{eventController.newEvent()}"
+					action="#{eventController.newEventO()}"
 					styleClass="btn btn-primary" ajax="false" />
 			</div>
 			<div class="row">
@@ -69,6 +69,8 @@
 							</p:column>
 							
 						</p:dataTable>
+						<h:outputLabel value="#{eventController.mensaje}" style="color:red" />
+						<h:outputLabel value="#{eventController.mensajeUp}" style="color:green"/>
 					</div>
 				</div>
 			</div>

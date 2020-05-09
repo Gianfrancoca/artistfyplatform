@@ -57,7 +57,7 @@ public class registerControllerA implements Serializable {
 			r.setIdA(TIPO_USUARIO);
 			roles.add(r);
 			rS.assignRolesToUserA(userA, roles);
-			redirect = "index?faces-redirect=true";
+			redirect = "indexA?faces-redirect=true";
 			mensaje =  "User has been created";
 		} catch (Exception e) {
 			mensaje = "User has not been created";
