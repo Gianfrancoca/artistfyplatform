@@ -32,6 +32,7 @@ public class registerControllerA implements Serializable {
 
 	private Artist artist;
 	private UserA userA;
+	private String mensaje;
 
 	@PostConstruct
 	public void init() {
@@ -57,8 +58,9 @@ public class registerControllerA implements Serializable {
 			roles.add(r);
 			rS.assignRolesToUserA(userA, roles);
 			redirect = "index?faces-redirect=true";
+			mensaje =  "User has been created";
 		} catch (Exception e) {
-
+			mensaje = "User has not been created";
 		}
 
 		return redirect;
@@ -79,6 +81,14 @@ public class registerControllerA implements Serializable {
 
 	public void setUserA(UserA userA) {
 		this.userA = userA;
+	}
+
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
 	}
 
 }

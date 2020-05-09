@@ -92,6 +92,18 @@ public class masterController implements Serializable {
 		case "/listEventO.xhtml":
 			rol = "ORGANIZER";
 			break;
+		case "/artistMod.xhtml":
+			rol = "ADMIN";
+			break;	
+		case "/contractMod.xhtml":
+			rol = "ADMIN,ORGANIZER";
+			break;	
+		case "/eventMod.xhtml":
+			rol = "ADMIN,ORGANIZER";
+			break;
+		case "/organizerMod.xhtml":
+			rol = "ADMIN";
+			break;
 		default:
 			break;
 		}

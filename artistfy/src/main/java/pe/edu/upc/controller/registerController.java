@@ -34,6 +34,8 @@ public class registerController implements Serializable {
 	private User user;
 	private Organizer organizer;
 	
+	private String mensaje;
+	
 	@PostConstruct
 	public void init() {
 		//this.customer = new Customer();
@@ -61,8 +63,9 @@ public class registerController implements Serializable {
 			roles.add(r);
 			rS.assignRolesToUser(user, roles);
 			redirect = "index?faces-redirect=true";
+			mensaje =  "User has been created";
 		} catch (Exception e) {
-
+			mensaje = "User has not been created";
 		}
 
 		return redirect;
@@ -83,6 +86,14 @@ public class registerController implements Serializable {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
 	}
 
 }
