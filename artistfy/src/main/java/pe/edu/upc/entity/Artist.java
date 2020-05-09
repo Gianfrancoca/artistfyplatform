@@ -56,6 +56,7 @@ public class Artist implements Serializable{
 			this.phone = phone;
 			this.skill = skill;
 			this.genre = genre;
+			
 			this.websiteUrl = websiteUrl;
 		}
 

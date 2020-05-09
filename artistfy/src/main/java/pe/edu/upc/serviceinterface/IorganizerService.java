@@ -9,4 +9,5 @@ public interface IorganizerService {
 	public void insert (Organizer organizer);
 	
 	public List<Organizer> list();
+	public void delete (Organizer or);
 }
