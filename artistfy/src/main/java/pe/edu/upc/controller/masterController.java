@@ -49,7 +49,7 @@ public class masterController implements Serializable {
 		FacesContext context = FacesContext.getCurrentInstance();
 		User us = (User) context.getExternalContext().getSessionMap().get("user");
 
-		List<UserRol> roles = rS.findUserRolesByUser(us);
+		List<UserRol> roles = rS.findUserRolesByUser (us);
 
 		String rol = "";
 		switch (viewId) {
