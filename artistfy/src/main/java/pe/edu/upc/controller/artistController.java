@@ -24,6 +24,10 @@ public class artistController implements Serializable {
 	private Artist i;
 	List<Artist> listaArtist;
 	
+	private String mensaje;
+	
+	private String mensajeUp;
+	
 	@PostConstruct
 	public void init() {
 		this.listaArtist = new ArrayList<Artist>();
@@ -60,6 +64,7 @@ public class artistController implements Serializable {
 		try {
 			iService.delete(ar.getIdArtist());
 			list();
+			mensaje = "Artist has been deleted";
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
@@ -72,6 +77,7 @@ public class artistController implements Serializable {
 			iService.update(this.i);
 			cleanArtist();
 			this.list();
+			mensajeUp="Artist has been updated";
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
@@ -102,6 +108,22 @@ public class artistController implements Serializable {
 
 	public void setListaArtist(List<Artist> listaArtist) {
 		this.listaArtist = listaArtist;
+	}
+
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
+	}
+
+	public String getMensajeUp() {
+		return mensajeUp;
+	}
+
+	public void setMensajeUp(String mensajeUp) {
+		this.mensajeUp = mensajeUp;
 	}
 	
 }

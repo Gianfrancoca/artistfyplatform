@@ -29,6 +29,9 @@ public class eventController implements Serializable{
 	private Event e;
 	private Organizer o;
 	
+	private String mensaje;
+	private String mensajeUp;
+	
 	List<Event> listaEvent;
 	List<Organizer> listaOrganizer;
 	
@@ -83,6 +86,7 @@ public class eventController implements Serializable{
 		try {
 			iService.delete(ev.getIdEvent());
 			list();
+			mensaje="Event has been deleted";
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.getMessage();
@@ -94,6 +98,7 @@ public class eventController implements Serializable{
 			iService.update(this.e);
 			cleanEvent();
 			this.list();
+			mensaje = "Event has been updated";
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.getMessage();
@@ -139,6 +144,22 @@ public class eventController implements Serializable{
 
 	public void setListaOrganizer(List<Organizer> listaOrganizer) {
 		this.listaOrganizer = listaOrganizer;
+	}
+
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
+	}
+
+	public String getMensajeUp() {
+		return mensajeUp;
+	}
+
+	public void setMensajeUp(String mensajeUp) {
+		this.mensajeUp = mensajeUp;
 	}
 	
 	

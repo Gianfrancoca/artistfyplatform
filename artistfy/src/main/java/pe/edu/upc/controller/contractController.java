@@ -29,6 +29,9 @@ public class contractController implements Serializable{
 	@Inject
 	private IartistService aService;
 
+	private String mensaje;
+	private String mensajeUp;
+	
 	private Contract c;
 	private Artist a;
 	
@@ -84,6 +87,7 @@ public class contractController implements Serializable{
 		try {
 			iService.delete(co.getIdContract());
 			list();
+			mensaje="Contract has beeen deleted";
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.getMessage();
@@ -95,6 +99,7 @@ public class contractController implements Serializable{
 			iService.update(this.c);
 			cleanContract();
 			this.list();
+			mensajeUp="Contract has been updated";
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.getMessage();
@@ -140,6 +145,22 @@ public class contractController implements Serializable{
 
 	public void setListaArtist(List<Artist> listaArtist) {
 		this.listaArtist = listaArtist;
+	}
+
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
+	}
+
+	public String getMensajeUp() {
+		return mensajeUp;
+	}
+
+	public void setMensajeUp(String mensajeUp) {
+		this.mensajeUp = mensajeUp;
 	}
 	
 	

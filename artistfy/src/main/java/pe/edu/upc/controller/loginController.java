@@ -15,12 +15,14 @@ import pe.edu.upc.serviceimpl.UserServiceImpl;
 
 @Named
 @ViewScoped
-public class LoginController implements Serializable {
+public class loginController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Inject
 	private UserServiceImpl uS;
+	
+	private String mensaje;
 
 	private User user;
 
@@ -28,6 +30,8 @@ public class LoginController implements Serializable {
 	public void init() {
 		this.user = new User();
 	}
+
+	
 
 	public String authentication() {
 		String redirect = null;
@@ -40,8 +44,10 @@ public class LoginController implements Serializable {
 				FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("user", userFound.get());
 				redirect = "/panel?faces-redirect=true";
 			} else {
-				FacesContext.getCurrentInstance().addMessage(null,
+					FacesContext.getCurrentInstance().addMessage(null,
 						new FacesMessage(FacesMessage.SEVERITY_WARN, "Aviso", "Credenciales incorrectas"));
+					mensaje = "Credenciales incorrectas";
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -49,7 +55,9 @@ public class LoginController implements Serializable {
 
 		return redirect;
 	}
-
+	
+	
+	
 	public User getUser() {
 		return user;
 	}
@@ -58,4 +66,13 @@ public class LoginController implements Serializable {
 		this.user = user;
 	}
 
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
+	}
+
+	
 }

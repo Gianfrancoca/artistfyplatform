@@ -15,7 +15,7 @@ import pe.edu.upc.serviceinterface.IRolServiceA;
 
 @Named
 @ViewScoped
-public class MasterControllerA implements Serializable {
+public class masterControllerA implements Serializable {
 	
 	/**
 	 * 

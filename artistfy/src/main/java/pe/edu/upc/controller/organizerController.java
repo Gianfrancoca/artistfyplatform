@@ -22,6 +22,10 @@ public class organizerController implements Serializable {
 	private IorganizerService iService;
 
 	private Organizer i;
+	
+	private String mensaje;
+	private String mensajeUp;
+	
 	List<Organizer> listaOrganizer;
 	
 	//constructor
@@ -62,6 +66,7 @@ public class organizerController implements Serializable {
 		try {
 			iService.delete(or.getIdOrganizer());
 			list();
+			mensaje = "Organizer has been deleted";
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
@@ -73,6 +78,7 @@ public class organizerController implements Serializable {
 			iService.update(this.i);
 			cleanOrganizer();
 			this.list();
+			mensaje = "Organizer has been updated";
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
@@ -106,6 +112,22 @@ public class organizerController implements Serializable {
 
 	public void setListaOrganizer(List<Organizer> listaOrganizer) {
 		this.listaOrganizer = listaOrganizer;
+	}
+
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
+	}
+
+	public String getMensajeUp() {
+		return mensajeUp;
+	}
+
+	public void setMensajeUp(String mensajeUp) {
+		this.mensajeUp = mensajeUp;
 	}	
 	
 	

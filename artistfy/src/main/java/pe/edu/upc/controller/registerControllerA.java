@@ -20,7 +20,7 @@ import pe.edu.upc.serviceinterface.IartistService;
 
 @Named
 @ViewScoped
-public class RegisterControllerA implements Serializable {
+public class registerControllerA implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
