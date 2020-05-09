@@ -75,4 +75,24 @@ public class EventDaoImpl implements IeventDao, Serializable{
 		
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Event> findByName(Event ev) {
+		// TODO Auto-generated method stub
+		List<Event> lista=new ArrayList<Event>();
+		try {
+			Query q = em.createQuery("from Event e where e.name like ?1");
+			q.setParameter(1, "%" + ev.getName() + "%");
+			lista=(List<Event>) q.getResultList();
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		
+		
+		
+		
+		return lista;
+	}
+
 }

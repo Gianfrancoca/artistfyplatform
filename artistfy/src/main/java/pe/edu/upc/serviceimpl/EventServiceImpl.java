@@ -48,4 +48,10 @@ public class EventServiceImpl implements IeventService, Serializable{
 		iD.update(ev);
 	}
 
+	@Override
+	public List<Event> findByName(Event ev) {
+		// TODO Auto-generated method stub
+		return iD.findByName(ev);
+	}
+
 }

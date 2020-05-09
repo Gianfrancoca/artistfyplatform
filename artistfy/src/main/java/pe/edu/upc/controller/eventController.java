@@ -109,6 +109,19 @@ public class eventController implements Serializable{
 		}
 	}
 	
+	public void findByName() {
+		try {
+			if(e.getName().isEmpty()) {
+				this.list();
+			} else {
+				listaEvent = this.iService.findByName(this.getE());
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+		}
+	}
+	
 	public String Modifpre(Event ev) {
 		this.setE(ev);
 		return "eventMod.xhtml";

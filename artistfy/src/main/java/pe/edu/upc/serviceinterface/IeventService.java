@@ -10,4 +10,5 @@ public interface IeventService {
 		public List<Event> list();
 		public void delete (int idEvent);
 		public void update(Event ev);
+		public List<Event> findByName(Event ev);
 }

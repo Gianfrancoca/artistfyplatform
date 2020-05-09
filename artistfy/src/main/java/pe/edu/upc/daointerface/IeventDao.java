@@ -10,4 +10,5 @@ public interface IeventDao {
 	public List<Event> list();
 	public void delete(int IdEvent);
 	public void update(Event ev);
+	public List<Event> findByName(Event ev);
 }
