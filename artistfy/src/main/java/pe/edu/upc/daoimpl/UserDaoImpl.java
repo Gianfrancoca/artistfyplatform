@@ -11,11 +11,11 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
-import pe.edu.upc.daointerface.IUserDao;
+import pe.edu.upc.daointerface.IuserDao;
 import pe.edu.upc.entity.User;
 
 @Named
-public class UserDaoImpl implements IUserDao, Serializable {
+public class UserDaoImpl implements IuserDao, Serializable {
 
 	private static final long serialVersionUID = 1L;
 

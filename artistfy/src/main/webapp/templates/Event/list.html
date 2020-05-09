@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+	<div class="container">
+		<div class="card">
+			<div class="card-header text-white bg-secondary">Lista de eventos</div>
+			<div class="card-body">
+				
+				<div class="table responsive">
+					<table class="table table-striped">
+						<thead class="thead-dark">
+							<tr>
+								<th>Id</th>
+								<th>Nombre</th>
+								<th>Descripcion</th>
+								<th>Requisitos</th>
+								<th>Salario</th>
+								<th>Horario</th>								
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="event:${listEvent}">
+								<td th:text="${event.id}"></td>
+								<td th:text="${event.name}"></td>
+								<td th:text="${event.description}"></td>
+								<td th:text="${event.requeriments}"></td>
+								<td th:text="${event.offeredSalary}"></td>
+								<td th:text="${event.scheduleAt}"></td>
+								<td><a th:href="@{'/events/detail/' + ${event.id}}"
+									   class="btn btn-success">Detalle</a>
+								</td>									
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

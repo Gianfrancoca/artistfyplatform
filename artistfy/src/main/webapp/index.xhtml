@@ -39,14 +39,8 @@
 			<p:commandButton value="Login"
 				action="#{loginController.authentication()}" update=":frm"
 				styleClass="btn btn-primary" />
+					
 
-			<p:commandButton value="Login artista"
-				action="indexA?faces-redirect=true" immediate="true"
-				styleClass="btn btn-primary" />
-					<p:outputLabel value="#{loginController.mensaje}" />	
-			<p:commandButton value="Crear Usuario Organizador"
-				action="register?faces-redirect=true" immediate="true"
-				styleClass="btn btn-primary" />
 		
 		<h:outputLabel value="#{registerController.mensaje}" style="color:green" />	
 

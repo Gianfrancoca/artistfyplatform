@@ -10,17 +10,17 @@ import javax.transaction.Transactional;
 
 import org.mindrot.jbcrypt.BCrypt;
 
-import pe.edu.upc.daointerface.IUserDao;
+import pe.edu.upc.daointerface.IuserDao;
 import pe.edu.upc.entity.User;
-import pe.edu.upc.serviceinterface.IUserService;
+import pe.edu.upc.serviceinterface.IuserService;
 
 @Named
-public class UserServiceImpl implements IUserService, Serializable {
+public class UserServiceImpl implements IuserService, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private IUserDao uD;
+	private IuserDao uD;
 
 	@Transactional
 	@Override
@@ -65,5 +65,6 @@ public class UserServiceImpl implements IUserService, Serializable {
 
 		return Optional.of(new User());
 	}
+
 
 }

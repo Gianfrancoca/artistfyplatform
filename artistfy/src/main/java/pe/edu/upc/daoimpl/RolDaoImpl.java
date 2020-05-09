@@ -10,13 +10,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import pe.edu.upc.daointerface.IRolDao;
+import pe.edu.upc.daointerface.IrolDao;
 import pe.edu.upc.entity.Rol;
 import pe.edu.upc.entity.User;
 import pe.edu.upc.entity.UserRol;
 
 @Named
-public class RolDaoImpl implements IRolDao, Serializable {
+public class RolDaoImpl implements IrolDao, Serializable {
 
 	private static final long serialVersionUID = 1L;
 

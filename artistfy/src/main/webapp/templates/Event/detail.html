@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+	<div class="container">
+		<h2>Detalles del Evento</h2>
+		<div class="card">
+			<div class="card-header text-white bg-secondary">Datos del evento</div>
+			<div class="card-body">
+				<ul class="list-group">
+					<li class="list-group-item" th:text="'ID : '+${event.id}"></li>
+					<li class="list-group-item" th:text="'Nombre : '+${event.name}"></li>
+					<li class="list-group-item" th:text="'Descripcion : '+${event.description}"></li>
+					<li class="list-group-item" th:text="'Requisitos : '+${event.requeriments}"></li>
+					<li class="list-group-item" th:text="'Salario ofertado : '+${event.offeredSalary}"></li>
+					<li class="list-group-item" th:text="'Horario : '+${event.scheduleAt}"></li>
+				</ul>
+				<br/>
+				<a th:href="@{/events/list}" class="btn btn-success">Regresar</a>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

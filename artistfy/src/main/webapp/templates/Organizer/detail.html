@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+	<div class="container">
+		<h2>Detalles del Organizador</h2>
+		<div class="card">
+			<div class="card-header text-white bg-secondary">Datos del Organizador</div>
+			<div class="card-body">
+				<ul class="list-group">
+					<li class="list-group-item" th:text="'ID : '+${organizer.organizerId}"></li>
+					<li class="list-group-item" th:text="'Nombre : '+${organizer.firstName}"></li>
+					<li class="list-group-item" th:text="'Apellido : '+${organizer.lastName}"></li>
+					<li class="list-group-item" th:text="'Dni : '+${organizer.dni}"></li>
+					<li class="list-group-item" th:text="'Correo : '+${organizer.email}"></li>
+					<li class="list-group-item" th:text="'Celular : '+${organizer.phone}"></li>
+				</ul>
+				<br/>
+				<a th:href="@{/organizers/list}" class="btn btn-success">Regresar</a>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

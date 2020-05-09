@@ -14,7 +14,7 @@ import org.mindrot.jbcrypt.BCrypt;
 import pe.edu.upc.entity.Artist;
 import pe.edu.upc.entity.RolA;
 import pe.edu.upc.entity.UserA;
-import pe.edu.upc.serviceinterface.IRolServiceA;
+import pe.edu.upc.serviceinterface.IrolServiceA;
 import pe.edu.upc.serviceinterface.IartistService;
 
 
@@ -28,7 +28,7 @@ public class registerControllerA implements Serializable {
 	private IartistService aS;
 
 	@Inject
-	private IRolServiceA rS;
+	private IrolServiceA rS;
 
 	private Artist artist;
 	private UserA userA;

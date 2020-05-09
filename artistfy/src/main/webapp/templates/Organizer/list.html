@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+	<div class="container">
+		<div class="card">
+			<div class="card-header text-white bg-secondary">Lista de Organizadores</div>
+			<div class="card-body">
+				
+				<div class="table responsive">
+					<table class="table table-striped">
+						<thead class="thead-dark">
+							<tr>
+								<th>Id</th>
+								<th>Nombre</th>
+								<th>Apellido</th>
+								<th>Dni</th>
+								<th>Correo</th>
+								<th>Celular</th>							
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="organizer:${listOrganizer}">
+								<td th:text="${organizer.organizerId}"></td>
+								<td th:text="${organizer.firstName}"></td>
+								<td th:text="${organizer.lastName}"></td>
+								<td th:text="${organizer.dni}"></td>
+								<td th:text="${organizer.email}"></td>
+								<td th:text="${organizer.phone}"></td>
+								<td><a th:href="@{'/organizers/detail/' + ${organizer.organizerId}}"
+									   class="btn btn-success">Detalle</a>
+								</td>									
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

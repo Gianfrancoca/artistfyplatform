@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+	<div class="container">
+		<div class="card">
+			<div class="card-header text-white bg-secondary">Lista de Artistas</div>
+			<div class="card-body">
+				
+				<div class="table responsive">
+					<table class="table table-striped">
+						<thead class="thead-dark">
+							<tr>
+								<th>Id</th>
+								<th>Nombre</th>
+								<th>Apellido</th>
+								<th>Dni</th>
+								<th>Correo</th>
+								<th>Celular</th>
+								<th>Habilidades</th>
+								<th>Generos</th>
+								<th>Redes Sociales</th>								
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="artist:${listArtist}">
+								<td th:text="${artist.artistId}"></td>
+								<td th:text="${artist.firstName}"></td>
+								<td th:text="${artist.lastName}"></td>
+								<td th:text="${artist.dni}"></td>
+								<td th:text="${artist.email}"></td>
+								<td th:text="${artist.phone}"></td>
+								<td th:text="${artist.skill}"></td>
+								<td th:text="${artist.genre}"></td>
+								<td th:text="${artist.websiteUrl}"></td>
+								<td><a th:href="@{'/artists/detail/' + ${artist.artistId}}"
+									   class="btn btn-success">Detalle</a>
+								</td>									
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

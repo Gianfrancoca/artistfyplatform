@@ -11,7 +11,7 @@ import javax.inject.Named;
 
 import pe.edu.upc.entity.UserA;
 import pe.edu.upc.entity.UserRolA;
-import pe.edu.upc.serviceinterface.IRolServiceA;
+import pe.edu.upc.serviceinterface.IrolServiceA;
 
 @Named
 @ViewScoped
@@ -22,7 +22,7 @@ public class masterControllerA implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Inject
-	private IRolServiceA rS;
+	private IrolServiceA rS;
 
 	public void verificarSesionA() {
 		try {

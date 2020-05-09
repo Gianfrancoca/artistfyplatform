@@ -14,7 +14,7 @@ import org.mindrot.jbcrypt.BCrypt;
 import pe.edu.upc.entity.Organizer;
 import pe.edu.upc.entity.Rol;
 import pe.edu.upc.entity.User;
-import pe.edu.upc.serviceinterface.IRolService;
+import pe.edu.upc.serviceinterface.IrolService;
 import pe.edu.upc.serviceinterface.IorganizerService;
 
 @Named
@@ -28,7 +28,7 @@ public class registerController implements Serializable {
 	private IorganizerService oS;
 	
 	@Inject
-	private IRolService rS;
+	private IrolService rS;
 
 	//private Customer customer;
 	private User user;

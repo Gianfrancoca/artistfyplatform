@@ -43,6 +43,7 @@
 				value="#{registerController.organizer.firstName}"
 				maxlength="30" required="true" />
 				<h:column />
+				<br/>
 				
 			<h:outputLabel for="lastName" value="lastName"
 				 />
@@ -52,7 +53,7 @@
 				value="#{registerController.organizer.lastName}"
 				maxlength="30" required="true" />
 			<h:column />
-				
+				<br/>
 			<h:outputLabel for="dni" value="dni"
 				 />
 
@@ -63,16 +64,16 @@
 				counterTemplate="{0} caracteres restantes." autoResize="false"
 				 required="true" />
 				<h:column />
+
 				<h:outputText id="display" />
-			<h:outputLabel for="email" value="email"
-				 />
+			<h:outputLabel for="email" value="email"/>
 
 			<p:inputText autocomplete="off" id="email"
 				styleClass="form-control"
 				value="#{registerController.organizer.email}"
 				maxlength="30" required="true" />
 				<h:column />
-				
+				<br/>
 			<h:outputLabel for="phone" value="phone" />
 
 			<p:inputText autocomplete="off" id="phone"
@@ -81,8 +82,9 @@
 				maxlength="9" 
 				counterTemplate="{0} caracteres restantes." autoResize="false"
 				required="true" />					
-				<h:column />Ï
+				<h:column />
 				<h:outputText id="displayP" />
+				<br/>
 				<h:column />
 				
 				<h:column />

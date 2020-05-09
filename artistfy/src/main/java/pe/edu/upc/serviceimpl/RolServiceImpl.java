@@ -9,19 +9,19 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
 
-import pe.edu.upc.daointerface.IRolDao;
+import pe.edu.upc.daointerface.IrolDao;
 import pe.edu.upc.entity.Rol;
 import pe.edu.upc.entity.User;
 import pe.edu.upc.entity.UserRol;
-import pe.edu.upc.serviceinterface.IRolService;
+import pe.edu.upc.serviceinterface.IrolService;
 
 @Named
-public class RolServiceImpl implements IRolService, Serializable {
+public class RolServiceImpl implements IrolService, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private IRolDao rD;
+	private IrolDao rD;
 
 	@Transactional
 	@Override

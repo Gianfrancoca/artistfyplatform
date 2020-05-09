@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+	<div class="container">
+		<h2>Detalles del Artista</h2>
+		<div class="card">
+			<div class="card-header text-white bg-secondary">Datos del Artista</div>
+			<div class="card-body">
+				<ul class="list-group">
+					<li class="list-group-item" th:text="'ID : '+${artist.artistId}"></li>
+					<li class="list-group-item" th:text="'Nombre : '+${artist.firstName}"></li>
+					<li class="list-group-item" th:text="'Apellido : '+${artist.lastName}"></li>
+					<li class="list-group-item" th:text="'Dni : '+${artist.dni}"></li>
+					<li class="list-group-item" th:text="'Correo : '+${artist.email}"></li>
+					<li class="list-group-item" th:text="'Celular : '+${artist.phone}"></li>
+					<li class="list-group-item" th:text="'Habilidad : '+${artist.skill}"></li>
+					<li class="list-group-item" th:text="'Genero : '+${artist.genre}"></li>
+					<li class="list-group-item" th:text="'Redes Sociales : '+${artist.websiteUrl}"></li>
+				</ul>
+				<br/>
+				<a th:href="@{/artists/list}" class="btn btn-danger">Regresar</a>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
