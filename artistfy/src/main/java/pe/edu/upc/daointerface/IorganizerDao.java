@@ -8,3 +8,4 @@ public interface IorganizerDao {
 	public void insert(Organizer organizer);
 	public List<Organizer> list();
 }
+ 
