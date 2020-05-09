@@ -16,7 +16,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="form-group table-responsive box-table-class">
-						<p:dataTable id="lstContract" var="inf"
+						<p:dataTable id="lstContract " var="inf"
 							value="#{contractController.listaContract}"
 							paginator="true" paginatorPosition="top"
 							rowsPerPageTemplate="10,20,30,40,50" rows="10"
@@ -33,7 +33,7 @@
 							</p:column>
 							
 
-							<p:column headerText="description" sortBy="#{inf.descriptionContract}">
+							<p:column headerText="description" sortBy="#{inf.descriptionContract  }">
 								<h:outputText value="#{inf.descriptionContract}" />
 							</p:column>
 
