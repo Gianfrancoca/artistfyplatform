@@ -37,7 +37,7 @@
 								<h:outputText value="#{inf.firstName}" />
 							</p:column>
 
-							<p:column headerText="lastName" sortBy="#{inf.lastName}" filterBy="#{inf.lastName}">
+							<!--  <p:column headerText="lastName" sortBy="#{inf.lastName}" filterBy="#{inf.lastName}">
 								<h:outputText value="#{inf.lastName}" />
 							</p:column>
 
@@ -65,16 +65,16 @@
 
 							<p:column headerText="websiteUrl" sortBy="#{inf.websiteUrl}">
 								<h:outputText value="#{inf.websiteUrl}" />
-							</p:column>
+							</p:column> -->
 
 
-							<p:column headerText="Operacion">
+							<!--  <p:column headerText="Operacion">
 							<h:commandLink action="lstArtist" value="Eliminar" actionListener="#{artistController.delete(inf)}" style="color:red"/>
 							</p:column>
 
 							<p:column headerText="Operación" exportable="false">
 							<h:commandLink value="Modificar" action="#{artistController.Modifpre(inf)}" style="color:blue;" />
-							</p:column>
+							</p:column> -->
 														
 						</p:dataTable>
 						<h:outputLabel value="#{artistController.mensaje}" style="color:red" />
